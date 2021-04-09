@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>odin project - javascript 1</title>
   <meta charset="UTF-8"/>
 </head>
 <body>
-  <script>
-	let admin;
-	let name;
-	name = "John";
-	admin = name;
-	alert(admin);
 
-	let ourPlanetName = "Earth";
-	let currentUserName;
+	<p>This is a page to run javascript tests.</p>
+	<p>I'm hoping to have the console report "Hello there, world!" and lots of other things.</p>
 
-	console.log("Hello there, world!");
-	
-	
-  </script>
+	<script>
+
+		let admin;
+		let name;
+		name = "John";
+		admin = name;
+		console.log(admin);
+
+		let ourPlanetName = "Earth";
+		let currentUserName;
+
+		console.log("Hello there, world!");
+		
+		var x = 999999999999999;
+		console.log(x);
+		var y = 9999999999999999;
+		console.log(y);
+		var z = x + y;
+		console.log(z);
+		var z = "Hello" + x + y;
+		console.log(z);
+		var z = x + y + "Hello";
+		console.log(z);
+		var z = x.toString() - y;
+		console.log(z);
+		console.log( x / "Apple" );
+		console.log( NaN + "Apple" );
+		
+		var myNumber = 2;
+		while (myNumber != Infinity) {   // Execute until Infinity
+			myNumber = myNumber * myNumber;
+			console.log(myNumber);
+}
+		var x = 0xFF;        // x will be 255 
+		console.log(x);
+		
+		// apparently the following is converting from base 2 to base 32 -- oh that's what the number in the parenthesis does!!
+		
+		 var myNumber = 32;
+		myNumber.toString(10);  // returns 32
+		console.log(myNumber)l
+		myNumber.toString(32);  // returns 10
+		myNumber.toString(16);  // returns 20
+		myNumber.toString(8);   // returns 40
+		myNumber.toString(2);   // returns 100000
+		
+	</script>
 </body>
 </html>
