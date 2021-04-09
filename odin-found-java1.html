@@ -41,20 +41,50 @@
 		while (myNumber != Infinity) {   // Execute until Infinity
 			myNumber = myNumber * myNumber;
 			console.log(myNumber);
-}
+		}
 		var x = 0xFF;        // x will be 255 
 		console.log(x);
 		
 		// apparently the following is converting from base 2 to base 32 -- oh that's what the number in the parenthesis does!!
 		
-		 var myNumber = 32;
-		myNumber.toString(10);  // returns 32
-		console.log(myNumber)l
-		myNumber.toString(32);  // returns 10
-		myNumber.toString(16);  // returns 20
-		myNumber.toString(8);   // returns 40
-		myNumber.toString(2);   // returns 100000
-		
+		var myNumber = 32;
+		var base = 2;
+		while (base !=32) {
+			base = base * 2;
+			console.log(myNumber.toString(base));
+		}
+
+		console.log(500 == "500");
+		console.log(500 === "500");
+		console.log("500" === "500");
+
+		x = 5
+		y = 3
+		console.log(x+y);
+		console.log(x-y);
+		console.log(x*y);
+		console.log(x/y);
+		console.log(x%y);
+		console.log("x++ is ", x++);
+		console.log("++x is", ++x);
+		console.log("x-- is ", x--);
+		console.log("--x is", --x);
+		console.log(x**y);
+		console.log(Math.pow(x,y));
+		console.log(x+y);
+		console.log(x+y);
+
+		console.log(10/2);
+
+		// from the mdn article (numbers #2)
+
+		let myInt = 5;
+		let myFloat = 6.667;
+
+		let lotsOfDecimal = 1.766584958675746364;
+		let twoDecimalPlaces = lotsOfDecimal.toFixed(4);
+		console.log(lotsOfDecimal, " ", twoDecimalPlaces);
+
 	</script>
 </body>
 </html>
