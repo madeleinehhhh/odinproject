@@ -9,26 +9,48 @@
   </script>
 <h3>Learning Outcomes</h3>
 <ul>
-  <li>What are the eight data types of javascript?</li>
+  <li>What are the eight data types of javascript?
     <ol>
       <li>number</li>
       <li>BigInt -- for numbers bigger than 2^53 - 1. a value is a BigInt if we add n to the end, e.g. 1234567890123456789012345678901234567890n</li>
       <li>strings, denoted with simple quotes, single or double, or extended functionality backticks: ', ", `<br />you can embed variables and expressions into a backtick string by putting them in: ${...}.</li>
-      <li>
-      <li>
-      <li>
-      <li>
-      <li>
-      <li>
-  <li>Which data type is NOT primitive?</li>
-  <li>What is the difference between single, double, and backtick quotes for strings?</li>
-  <li>Which type of quote lets you embed variables/expressions into a string?</li>
-  <li>How do you embed variables/expressions into a string?</li>
-  <li>How do you escape characters in a string?</li>
-  <li>What is the difference between slice/substring/substr?</li>
-  <li>What are methods?</li>
+      <li>boolean</li>
+      <li>null -- would be assigned to something with an unknown or undefined value, like if someone hasn't input their age yet</li>
+      <li>undefined -- could but shouldn't be assigned to a variable, and is the default initial value until another variable is assigned</li>
+      <li>objects -- can store more complex collections of data than the other "primitive" types which contain only a single thing (a string, number, etc.)</li>
+      <li>symbols... create unique identifiers for objects... more later</li>
+    </ol></li>
+  <li>Which data type is NOT primitive?<br />objects (also symbols? i don't think so)</li>
+  <li>What is the difference between single, double, and backtick quotes for strings?<br />single & double are simple and backticks have extended functionality, i.e. you can embed variables & expressions in them!</li>
+  <li>Which type of quote lets you embed variables/expressions into a string?<br />the backtick!</li>
+  <li>How do you embed variables/expressions into a string?<br />${}</li>
+  <li>How do you escape characters in a string?<br />with a back slash: \</li>
+  <li>What is the difference between slice/substring/substr?<br />quoting from <a href="https://www.w3schools.com/js/js_string_methods.asp">w3 article on string methods</a>
+    <ul>
+      <li>slice() extracts a part of a string and returns the extracted part in a new string.</li>
+      <li>substring() cannot accept negative indexes -- i.e. you can't slice from the back</li>
+      <li>substr() is similar to slice(). The difference is that the second parameter specifies the length of the extracted part.</li>
+    </ul>
+  </li>
+  <li>What are methods?<br />... maybe built in actions that do stuff to primitives?<br />oh! here it is from odin: a method is a bit of functionality that is built into the language or into specific data types</li>
   <li>What are the three logical operators and what do they stand for?</li>
-  <li>What are the comparison operators?</li>
+  <li>What are the comparison operators?
+    <ul>
+      <li>greater/less than: a > b / a < b</li>
+      <li>greater/less than <i>or equals</i>: a >= b / a <= b</li>
+      <li>equals: a == b<br />(nb: = is assignment, not the equality test)<br />== checks equality without checking types, whereas === checks for type first.</li>
+      <li>not equals: a != b</li>
+    </ul>
+    <script>
+      console.log(5 > 4);
+      console.log("apple" > "pineapple");
+      console.log("2" > "12");
+      console.log(undefined == null);
+      console.log(undefined === null);
+      console.log(null == "\n0\n");
+      console.log(null === +"\n0\n");
+    </script>
+  </li>
   <li>What is nesting?</li>
   <li>What are truthy and falsy values?</li>
   <li>What are the falsy values in JavaScript?</li>
