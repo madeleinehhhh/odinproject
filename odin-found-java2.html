@@ -33,7 +33,17 @@
     </ul>
   </li>
   <li>What are methods?<br />... maybe built in actions that do stuff to primitives?<br />oh! here it is from odin: a method is a bit of functionality that is built into the language or into specific data types</li>
-  <li>What are the three logical operators and what do they stand for?</li>
+  <li>What are the three logical operators and what do they stand for?
+    <ul>
+	  <li>OR: ||</li>
+	  <li>AND: &&</li>
+	  <li>NOT: !</li>
+	  <li><small><i>and it appears there is a fourth...</i> Nullish Coalescing: ??</small></li>
+	</ul>
+	you can use && and || to give you one of multiple comparisons. AND returns the first falsy value while OR returns the first truthy one.<br />
+	!! converts anything to its boolean. !! is the same as Boolean().<br />
+	in order of precedence, ! then && then ||
+  </li>
   <li>What are the comparison operators?
     <ul>
       <li>greater/less than: a > b / a < b</li>
@@ -41,24 +51,71 @@
       <li>equals: a == b<br />(nb: = is assignment, not the equality test)<br />== checks equality without checking types, whereas === checks for type first.</li>
       <li>not equals: a != b</li>
     </ul>
-    <script>
-      console.log(5 > 4);
-      console.log("apple" > "pineapple");
-      console.log("2" > "12");
-      console.log(undefined == null);
-      console.log(undefined === null);
-      console.log(null == "\n0\n");
-      console.log(null === +"\n0\n");
-    </script>
   </li>
   <li>What is nesting?</li>
-  <li>What are truthy and falsy values?</li>
-  <li>What are the falsy values in JavaScript?</li>
-  <li>What is the syntax for an if/else conditional?</li>
+  <li>What are truthy and falsy values?<br />truthy and falsy is just naming the inherent boolean value of various data</li>
+  <li>What are the falsy values in JavaScript?<br />falsy:
+    <ul>
+	  <li>false</li>
+	  <li>0</li>
+	  <li>'' -- i.e. an empty string</li>
+	  <li>null, undefined, or NaN</li>
+	</ul>
+	truthy (just for completeness, is basically anything else?):
+	<ul>
+	  <li>a non-empty string, e.g. '0' or 'false'</li>
+	  <li>[] or {} or function(){}-- i.e. an empty array, an empty object, or an "empty" function</li>
+	</ul>
+</li>
+  <li>What is the syntax for an if/else conditional?<br />if (condition) { code } else if (condition2) { code } else { code }</li>
   <li>What is the syntax for a switch statement?</li>
+  <li>What is the relationship between null and undefined?<br />null is something you assign when something is unknown, whereas undefined is sort of like null for default. they are both falsey.</li>
   <li>What is the syntax for a ternary operator?</li>
-  <li>What is the relationship between null and undefined?</li>
-  <li>What are conditionals?</li>
+  <li>What are conditionals?<br ?> conditional statements let you make the computer pick a course of action based on a set of conditions.</li>
 </ul>
+<!-- <script>
+  console.log( null || 2 || undefined );
+//  alert( alert(1) || 2 || alert(3) );
+//  alert( alert(1) && alert(2) );
+  console.log( null || 2 && 3 || 4 );
+  
+  let age = 14;
+  if ( age>=14 && age<=90 ) {
+    console.log(age, " is inclusively between 14 and 90.");
+	}
+  if ( age<14 || age>90 ) {
+    console.log(age, " is less than 14 or more than 90.");
+	}
+
+  if (-1 || 0) console.log( 'first' );
+  if (-1 && 0) console.log( 'second' );
+  if (null || -1 && 1) console.log( 'third' );
+
+</script>-->
+
+<!-- script to check login, from https://javascript.info/logical-operators -->
+<script>
+  let loginUser = prompt("who's there?", "");
+  
+  if ( !loginUser ) {
+    alert("Canceled");
+	}
+  else if ( loginUser != "Admin" ) {
+    alert("I don't know you");
+	}
+  else {
+    let password = prompt("password?");
+	if ( !password ) {
+	  alert("Canceled");
+	  }
+	else if ( password != "TheMaster" ) {
+	  alert("Wrong password");
+	}
+	else {
+	  alert("Welcome!");
+	}
+  }
+</script>
+
 </body>
 </html>
