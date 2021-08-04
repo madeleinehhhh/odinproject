@@ -13,7 +13,6 @@
         function favoriteAnimal(animal) {
             console.log(animal + " is my favorite animal!")
         }
-
         favoriteAnimal('Goat')
     </script>
 -->
@@ -23,15 +22,12 @@
         function checkAgeConditional(age) {
             return ( age > 18 ) ? true : confirm('Did your parents give you permission?')
         }
-
         function checkAgeOR(age) {
             return ( age > 18 ) || confirm('Did your parents give you permission?')
         }
-
         function min(a,b) {
             return (a>b) ? b : a
         }
-
         function pow(x,n) {
             let a = x
             for (n<)
@@ -62,12 +58,30 @@
         // 3. Write a function called capitalize
         //  that takes a string
         //  and returns that string with only the first letter capitalized.
-        // Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+        //  Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+	
+	// steps
+	// a. split string into first character and all the rests
         function capitalize(string) {
-            let length = string.length;
-            let lowercase = string.toLowerCase();
-            let first = str.slice(0,0)
-            firstUpper = first.toUpperCase();
+	    let length = string.length
+	    let first = string.slice(0,1)
+	    let lowercase = string.slice(1,length)
+
+            first = first.toUpperCase();
+            lowercase = lowercase.toLowerCase();
+            
+            newString = first + lowercase
+            return newString 
+        }
+
+
+        // 4. Write a function called lastLetter
+        //  that takes a string
+        //  the very last letter of that string: 
+        //  lastLetter("abcd") should return "d"
+
+        function lastLetter(string) {
+	    return string.slice(-1)
         }
     </script>
 </body>
