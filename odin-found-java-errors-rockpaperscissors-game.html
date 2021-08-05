@@ -52,7 +52,10 @@
   // let playerSelection
 
   let roundNumber=1
+  let computerScore=0
+  let playerScore=0
 
+  //this function gets the computer's throw
   function computerPlay() {
     let computerSelection
     let random = Math.floor(Math.random() * 3) + 1;
@@ -64,14 +67,17 @@
     return computerSelection
   }
 
-
+  //this function gets the player's throw
   function playerPlay() {
     let playerSelection
-    /*playerSelection = prompt("Please enter rock, paper, or scissors: ").toLowerCase();
+    
+    playerSelection = prompt("Please enter rock, paper, or scissors: ").toLowerCase();
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" && playerSelection=="") {
       playerSelection = prompt("Please enter exactly 'rock' or 'paper' or 'scissors': ").toLowerCase();
-    }*/
+    }
+    /*
     playerSelection = "rock"
+    */
     //$('div.game h3.player'/*+gameNumber*/).text('your throw is... ' + playerSelection)
     console.log('your throw is... ' + playerSelection)
     return playerSelection
@@ -83,24 +89,24 @@
   //$('div.game h2.round').text('this is round '+roundNumber)
   console.log('this is round ' + roundNumber)
 
-    computerSelection = computerPlay()
     playerSelection = playerPlay()
+    computerSelection = computerPlay()
 
     let results 
-    let computerScore=0
-    let playerScore=0
 
     if ( (playerSelection=="rock" && computerSelection=="paper") || (playerSelection=="paper" && computerSelection=="scissors") || (playerSelection=="scissors" && computerSelection=="rock") ) {
       results = "you lose! paper beats rock!"
       computerScore += 1
     } else if ( (playerSelection=="rock" && computerSelection=="scissors") || (playerSelection=="scissors" && computerSelection=="paper") || (playerSelection=="paper" && computerSelection=="rock") ) {
       results = "you win! " + playerSelection + " beats " + computerSelection + "!"
+      playerScore += 1
     } else {
       results = "it's a draw! " + playerSelection + " is the same as " + computerSelection + "!"
     }
 
     //$('div.game h2.results'/*+gameNumber*/).text(results)
     console.log(results)
+    console.log('the computer score is ' + computerScore + ', and your score is ' + playerScore)
 
     roundNumber+=1
 
@@ -110,8 +116,15 @@
 
 
   function game() {
-    for ( ; roundNumber <= 5; ) {
+
+    for ( ; computerScore < 5 && playerScore < 5; ) {
       playRound()
+    }
+
+    if (computerScore > playerScore) {
+      console.log('You lost! The computer won.')
+    } else {
+      console.log('You won! You beat the computer.')
     }
 
   }
