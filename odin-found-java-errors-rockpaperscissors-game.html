@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rock-paper-scissors game</title>
+</head>
+<body>
 
-    <title>rock-paper-scissors game</title>
+  <h1>
+    rock-paper-scissors
+  </h1>
+  
+</body>
 
+<script>
+  function computerPlay() {
+    let computerThrow = "rock"
+    let random = Math.floor(Math.random() * 3) + 1;
+    console.log(random)
+    if (random=1) {
+      computerThrow="rock"
+      console.log(random)
+      console.log(computerThrow)
+      return computerThrow
+    }
+    else if (random=2) {
+      computerThrow="paper"
+      console.log(random)
+      console.log(computerThrow)
+      return computerThrow
+    }
+    else {
+      computerThrow="scissors"
+      console.log(random)
+      console.log(computerThrow)
+      return computerThrow
+    }
+// couldn't get result from ternary...
+//    random = 0 ? computerThrow = "rock"
+//    : random = 1 ? computerThrow = "paper"
+//    : computerThrow = "scissors"
+  }
 
-  </head>
-
-  <body>
-
-
-  </body>
-
-
-  <script>
-
-  </script>
+  console.log(computerPlay())
+</script>
 </html>
