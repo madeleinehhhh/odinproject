@@ -15,40 +15,49 @@
 </body>
 
 <script>
+  let computerSelection
+  let playerSelection
+
   function computerPlay() {
-    let computerSelection
     let random = Math.floor(Math.random() * 3) + 1;
-//    console.log(random)
-/*
-    long form, figured out to then convert to ternary
-      if (random==1) {
-      computerSelection="rock"
-      console.log(random)
-      console.log(computerSelection)
-      return computerSelection
-    }
-    else if (random==2) {
-      computerSelection="paper"
-      console.log(random)
-      console.log(computerSelection)
-      return computerSelection
-    }
-    else {
-      computerSelection="scissors"
-      console.log(random)
-      console.log(computerSelection)
-      return computerSelection
-    }
-    */
     random == 1 ? computerSelection = "rock"
     : random == 2 ? computerSelection = "paper"
     : computerSelection = "scissors"
-    console.log("the computer's throw is " + computerSelection)
+    return computerSelection
   }
 
-//  computerPlay()
+  function playerPlay() {
+    /*playerSelection = prompt("Please enter rock, paper, or scissors: ").toLowerCase();
+    if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" && playerSelection=="") {
+      playerSelection = prompt("Please enter exactly 'rock' or 'paper' or 'scissors': ").toLowerCase();
+    }*/
+    playerSelection = "rock"
+    return playerSelection
+  }
+  
+function playRound(computerSelection, playerSelection) {
+    computerSelection = computerPlay()
+    playerSelection = playerPlay()
+    console.log("the computer's throw is " + computerSelection)
+    console.log("the player's throw is " + playerSelection)
 
-  let playerSelection
+    /*
+    if ( (playerSelection=="rock" && computerSelection=="paper") || (playerSelection=="paper" && computerSelection=="scissors") || (playerSelection=="scissors" && computerSelection=="rock") ) {
+      return "you lose! paper beats rock!"
+    } else if ( (playerSelection=="rock" && computerSelection=="scissors") || (playerSelection=="scissors" && computerSelection=="paper") || (playerSelection=="paper" && computerSelection=="rock") ) {
+      return "you win! " + playerSelection + " beats " + computerSelection + "!"
+    } else {
+      return "it's a draw! " + playerSelection + " is the same as " + computerSelection + "!"
+    }
+    */
+
+    
+  }
+
+
+  console.log(playRound())
+  
+  
 
 </script>
 </html>
