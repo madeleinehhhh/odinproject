@@ -40,29 +40,20 @@
 
 <script>
 
-  // here, we define the variables
-    // does this need to happen here? or... 
-    // not, because we can return the variable from each play function
-
-    // tested, and we can just introduce the variables in the functions
-
-    //but roundNumber has to be introduced here so it doesn't 
-
-  // let computerSelection
-  // let playerSelection
-
+  // this sets up the variables that are needed globally
   let roundNumber=1
   let computerScore=0
   let playerScore=0
 
-  //this function gets the computer's throw
+  // this function gets the computer's throw
   function computerPlay() {
     let computerSelection
     let random = Math.floor(Math.random() * 3) + 1;
     random == 1 ? computerSelection = "rock"
     : random == 2 ? computerSelection = "paper"
     : computerSelection = "scissors"
-    //$('div.game h3.computer'/*+gameNumber*/).text('the computer\'s throw is... ' + computerSelection)
+    // this will be useful when we move the game from console to webpage
+      // $('div.game h3.computer'/*+gameNumber*/).text('the computer\'s throw is... ' + computerSelection)
     console.log('the computer\'s throw is... ' + computerSelection)
     return computerSelection
   }
@@ -78,15 +69,17 @@
     /*
     playerSelection = "rock"
     */
-    //$('div.game h3.player'/*+gameNumber*/).text('your throw is... ' + playerSelection)
+    // this will be useful when we move the game from console to webpage
+      // $('div.game h3.player'/*+gameNumber*/).text('your throw is... ' + playerSelection)
     console.log('your throw is... ' + playerSelection)
     return playerSelection
   }
 
-
+  // this function plays one round
   function playRound(computerSelection, playerSelection) {
 
-  //$('div.game h2.round').text('this is round '+roundNumber)
+  // this will be useful when we move the game from console to webpage
+    //$('div.game h2.round').text('this is round '+roundNumber)
   console.log('this is round ' + roundNumber)
 
     playerSelection = playerPlay()
@@ -104,7 +97,8 @@
       results = "it's a draw! " + playerSelection + " is the same as " + computerSelection + "!"
     }
 
-    //$('div.game h2.results'/*+gameNumber*/).text(results)
+    // this will be useful when we move the game from console to webpage
+      // $('div.game h2.results'/*+gameNumber*/).text(results)
     console.log(results)
     console.log('the computer score is ' + computerScore + ', and your score is ' + playerScore)
 
@@ -114,7 +108,7 @@
     
   }
 
-
+  // this function plays the game until one player (computer or player) has won 5 rounds
   function game() {
 
     for ( ; computerScore < 5 && playerScore < 5; ) {
