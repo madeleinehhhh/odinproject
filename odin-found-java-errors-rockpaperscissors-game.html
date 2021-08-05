@@ -16,33 +16,39 @@
 
 <script>
   function computerPlay() {
-    let computerThrow = "rock"
+    let computerSelection
     let random = Math.floor(Math.random() * 3) + 1;
-    console.log(random)
-    if (random=1) {
-      computerThrow="rock"
+//    console.log(random)
+/*
+    long form, figured out to then convert to ternary
+      if (random==1) {
+      computerSelection="rock"
       console.log(random)
-      console.log(computerThrow)
-      return computerThrow
+      console.log(computerSelection)
+      return computerSelection
     }
-    else if (random=2) {
-      computerThrow="paper"
+    else if (random==2) {
+      computerSelection="paper"
       console.log(random)
-      console.log(computerThrow)
-      return computerThrow
+      console.log(computerSelection)
+      return computerSelection
     }
     else {
-      computerThrow="scissors"
+      computerSelection="scissors"
       console.log(random)
-      console.log(computerThrow)
-      return computerThrow
+      console.log(computerSelection)
+      return computerSelection
     }
-// couldn't get result from ternary...
-//    random = 0 ? computerThrow = "rock"
-//    : random = 1 ? computerThrow = "paper"
-//    : computerThrow = "scissors"
+    */
+    random == 1 ? computerSelection = "rock"
+    : random == 2 ? computerSelection = "paper"
+    : computerSelection = "scissors"
+    console.log("the computer's throw is " + computerSelection)
   }
 
-  console.log(computerPlay())
+//  computerPlay()
+
+  let playerSelection
+
 </script>
 </html>
