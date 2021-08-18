@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundations, Fundamentals Part 4, Arrays, loops, and more?</title>
+</head>
+<body>
+    <h1>Working from: <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/fundamentals-part-4">this</a></h1>
+    <script>
+        // ARRAYS
+
+        // https://www.w3schools.com/js/js_arrays.asp
+        const cars = ["Saab", "Volvo", "BMW"];
+        let car = cars[0];
+        cars[0]="Ford";
+        console.log(cars.length);
+        // https://www.w3schools.com/js/js_array_methods.asp
+        const fruits = ["Banana", "Orange", "Apple"];
+        fruits.pop();
+        fruits.push("Kiwi");
+        fruits.splice(1,2)
+    </script>
+
+    <h2>Live output</h2>
+    <div class="output" style="height: 410px;overflow: auto;"></div>
+    
+    <script>
+        // LOOPS
+
+        // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
+        
+        // first, the countdown:
+        let output = document.querySelector('.output');
+        output.innerHTML = '';
+
+        let i = 10;
+        while (i >= 0) {
+          const para = document.createElement('p');
+          output.appendChild(para);
+
+            if (i==10) {
+              para.textContent = 'Countdown ' + i;
+          } else if (i==0) {
+              para.textContent = 'Blast off!';
+          } else {
+              para.textContent = i;
+          }
+
+          i--;
+        }
+    </script>
+</body>
+</html>
