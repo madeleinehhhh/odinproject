@@ -152,12 +152,12 @@
 
   
       do {
-
-        if ( name != phonebook[iPhonebook.name] ) {
+        if ( name == phonebook[iPhonebook].name ) {
           paraPhonebook.textContent = phonebook[iPhonebook].name + '\'s number is ' + phonebook[iPhonebook].number;
-          console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should be " + name)
+          // console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should be " + name)
+          break
         } else {
-          console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should not be " + name)
+          // console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should not be " + name)
           iPhonebook++;
         }
       } while (iPhonebook<phonebook.length)
@@ -168,6 +168,40 @@
       section02.appendChild(paraPhonebook);
     </script>
   
+
+  <h2>loops: task 3</h2>
+  <section id="preview03">
+  </section>
+  
+  <script>
+    let i03 = 500;
+    let paraPrime = document.createElement('p');
+
+    function isPrime(num) {
+      for(let i = 2; i < num; i++) {
+        if(num % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+
+    // Add your code here
+
+    paraPrime.textContent = "the prime numbers under 500 are: ";
+
+    for (i03; i03 > 1 ; i03--) {
+      if (isPrime(i03)) {
+        paraPrime.textContent += i03 + ', ';
+      }
+    }
+
+    // Don't edit the code below here!
+    let section03 = document.querySelector('#preview03');
+    section03.appendChild(paraPrime);
+  </script>
 
 
 
