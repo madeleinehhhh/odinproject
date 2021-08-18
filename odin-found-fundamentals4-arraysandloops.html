@@ -23,8 +23,12 @@
         fruits.splice(1,2)
     </script>
 
-    <h2>Live output</h2>
+    <h2>countdown</h2>
     <div class="output" style="height: 410px;overflow: auto;"></div>
+
+    <h2>guest lists</h2>
+    <p class="admitted">Admit: </p>
+    <p class="refused">Refuse: </p>
     
     <script>
         // LOOPS
@@ -49,6 +53,42 @@
           }
 
           i--;
+        }
+        
+        
+        // then, the guest lists
+        
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: '
+
+        let i = 0;
+        while ( i < people.length ) {
+
+          let person = people[i];
+
+          if ( person == 'Phil' || person == 'Lola' ) {
+          refused.textContent += person + ', ';
+          } else {
+          admitted.textContent += person + ', ';
+          }
+
+          i++;
+        }
+
+        refusals=refused.textContent
+        if ( refusals.slice(refusals.length-2)==", " ) {
+          refusals = refusals.slice(0, refusals.length-2);
+          refused.textContent=refusals + ".";
+        }
+
+        admits=admitted.textContent
+        if ( admits.slice(admits.length-2)==", " ) {
+          admits = admits.slice(0, admits.length-2);
+          admitted.textContent=admits + ".";
         }
     </script>
 </body>
