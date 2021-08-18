@@ -204,6 +204,82 @@
   </script>
 
 
+  <h2><a href="https://javascript.info/while-for">javascript.info: loops</a></h2>
+  <h3>output even numbers 2-10</h3>
+  <section id="preview04">
+  </section>
+
+  <script>
+    let paraEven = document.createElement('p');
+
+    for ( i04 = 1; i04 < 11; i04++ ) {
+      if (i04 % 2 ==0) {
+        paraEven.textContent+=i04+', ';
+      }
+    }
+
+    let section04 = document.querySelector('#preview04');
+    section04.appendChild(paraEven);
+  </script>
+
+<h3>replace for with while</h3>
+<section id="preview05">
+</section>
+
+<script>
+  let paraWhile = document.createElement('p');
+
+  let i05 = 0;
+  while (i05 < 3) {
+    paraWhile.textContent += 'number ' + i05 + '! ';
+    i05++
+  }
+
+  let section05 = document.querySelector('#preview05');
+  section05.appendChild(paraWhile);
+</script>
+
+<!--
+<h3>repeat until over 100</h3>
+<section id="preview06">
+</section>
+
+<script>
+  let paraOver = document.createElement('p');
+  let i06=10;
+  do {
+    i06 = prompt("enter a number greater than 100");
+    if (i06 > 100) {
+      break
+    }
+  } while (i06<101)
+
+  let section06 = document.querySelector('#preview06');
+  section06.appendChild(paraOver);
+</script>
+-->
+
+
+<h3>prime</h3>
+<section id="preview07">
+</section>
+
+<script>
+  let paraPrime = document.createElement('p');
+  let i07=2;
+  let i=1;
+  nPrimes = 10;
+  while ()
+  do {
+    if (i07) {
+      break
+    }
+  } while (i07<101)
+
+  let section07 = document.querySelector('#preview07');
+  section07.appendChild(paraPrime);
+</script>
+
 
 
 </body>
