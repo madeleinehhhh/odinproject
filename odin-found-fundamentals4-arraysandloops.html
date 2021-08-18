@@ -41,17 +41,17 @@
 
         let iCountdown = 10;
         while (iCountdown >= 0) {
-          const para = document.createElement('p');
-          output.appendChild(para);
+          const paraCountdown = document.createElement('p');
+          output.appendChild(paraCountdown);
 
             if (iCountdown==10) {
-              para.textContent = 'Countdown ' + iCountdown;
+              paraCountdown.textContent = 'Countdown ' + iCountdown;
               // console.log('Countdown ' + iCountdown)
           } else if (iCountdown==0) {
-              para.textContent = 'Blast off!';
+            paraCountdown.textContent = 'Blast off!';
               // console.log('Blast off!')
           } else {
-              para.textContent = iCountdown;
+            paraCountdown.textContent = iCountdown;
               // console.log(iCountdown)
           }
 
@@ -99,7 +99,7 @@
 
     <h2>loops: task 1</h2>
 
-    <section class="preview">
+    <section id="preview01">
     </section>
 
     <script>
@@ -123,12 +123,51 @@
 
       // Don't edit the code below here!
   
-      const section = document.querySelector('section');
-      section.appendChild(list);
+      const section01 = document.querySelector('#preview01');
+      section01.appendChild(list);
     </script>
 
 
     <h2>loops: task 2</h2>
+    <section id="preview02">
+    </section>
+    
+    <script>
+      let name = 'Mustafa';
+      let iPhonebook = 0;
+      let paraPhonebook = document.createElement('p');
+  
+      let phonebook = [
+        { name : 'Chris', number : '1549' },
+        { name : 'Li Kang', number : '9634' },
+        { name : 'Anne', number : '9065' },
+        { name : 'Francesca', number : '3001' },
+        { name : 'Mustafa', number : '6888' },
+        { name : 'Tina', number : '4312' },
+        { name : 'Bert', number : '7780' },
+        { name : 'Jada', number : '2282' },
+      ]
+  
+      // Add your code here
+
+  
+      do {
+
+        if ( name != phonebook[iPhonebook.name] ) {
+          paraPhonebook.textContent = phonebook[iPhonebook].name + '\'s number is ' + phonebook[iPhonebook].number;
+          console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should be " + name)
+        } else {
+          console.log("the name this time is " + phonebook[iPhonebook.name] + ", which should not be " + name)
+          iPhonebook++;
+        }
+      } while (iPhonebook<phonebook.length)
+
+
+      // Don't edit the code below here!
+      let section02 = document.querySelector('#preview02');
+      section02.appendChild(paraPhonebook);
+    </script>
+  
 
 
 
