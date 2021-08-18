@@ -15,7 +15,7 @@
         const cars = ["Saab", "Volvo", "BMW"];
         let car = cars[0];
         cars[0]="Ford";
-        console.log(cars.length);
+        // console.log(cars.length);
         // https://www.w3schools.com/js/js_array_methods.asp
         const fruits = ["Banana", "Orange", "Apple"];
         fruits.pop();
@@ -39,20 +39,23 @@
         let output = document.querySelector('.output');
         output.innerHTML = '';
 
-        let i = 10;
-        while (i >= 0) {
+        let iCountdown = 10;
+        while (iCountdown >= 0) {
           const para = document.createElement('p');
           output.appendChild(para);
 
-            if (i==10) {
-              para.textContent = 'Countdown ' + i;
-          } else if (i==0) {
+            if (iCountdown==10) {
+              para.textContent = 'Countdown ' + iCountdown;
+              // console.log('Countdown ' + iCountdown)
+          } else if (iCountdown==0) {
               para.textContent = 'Blast off!';
+              // console.log('Blast off!')
           } else {
-              para.textContent = i;
+              para.textContent = iCountdown;
+              // console.log(iCountdown)
           }
 
-          i--;
+          iCountdown--;
         }
         
         
@@ -65,10 +68,10 @@
         admitted.textContent = 'Admit: ';
         refused.textContent = 'Refuse: '
 
-        let i = 0;
-        while ( i < people.length ) {
+        let iGuests = 0;
+        while ( iGuests < people.length ) {
 
-          let person = people[i];
+          let person = people[iGuests];
 
           if ( person == 'Phil' || person == 'Lola' ) {
           refused.textContent += person + ', ';
@@ -76,7 +79,7 @@
           admitted.textContent += person + ', ';
           }
 
-          i++;
+          iGuests++;
         }
 
         refusals=refused.textContent
@@ -91,5 +94,44 @@
           admitted.textContent=admits + ".";
         }
     </script>
+
+    <h1>tests</h1>
+
+    <h2>loops: task 1</h2>
+
+    <section class="preview">
+    </section>
+
+    <script>
+      let myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+      let list = document.createElement('ul');
+  
+      // Add your code here
+
+      let iFood = 0;
+
+      while ( iFood < myArray.length ) {
+
+        listItem = document.createElement('li');
+
+        listItem.textContent=myArray[iFood];
+
+        list.appendChild(listItem)
+
+        iFood++;
+      }
+
+      // Don't edit the code below here!
+  
+      const section = document.querySelector('section');
+      section.appendChild(list);
+    </script>
+
+
+    <h2>loops: task 2</h2>
+
+
+
+
 </body>
 </html>
