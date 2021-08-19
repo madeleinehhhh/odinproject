@@ -280,6 +280,35 @@
   section07.appendChild(paraPrime);
 </script>
 
+<h3>prime</h3>
+    <!--I don't know what's going wrong here.-->
+<section id="preview07">
+</section>
+    
+    
+  let paraPrime = document.createElement('p');
+  let i07=2;
+  let nPrimes = 10; //the user will be able to input this later
+
+//1. get the max number (nPrimes)
+//2. for each number between 2 and n check if it's prime
+//3. to check if it's prime, another loop, inside the first loop
+    
+  for ( j=2; j <= nPrimes; j++ ) {
+    let i = 2;
+    do {
+      if ( j % i == 0 ) {
+        break // i.e. the number can be divided evenly by anything, so stop the loop
+      } else {
+      paraPrime.textContent += j +', ';
+
+      }
+      i++;
+    } while ( i < j )
+  }
+
+  let section07 = document.querySelector('#preview07');
+  section07.appendChild(paraPrime);
 
 
 </body>
