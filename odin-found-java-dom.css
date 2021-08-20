@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.red {
+  color: #aa4931;
+}
+
+.blue {
+  color: #3a4d80;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 1em;
+  margin: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.blackPink {
+  border: 1em solid #2c2c2c;
+  background-color: #fde0de;
+  padding: 2em;
+}
