@@ -5,15 +5,66 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rock-paper-scissors game</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  </style>
+    
+
+  <style>
+    body {
+      font-family: 'Inter';
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    main {
+      margin: 2rem;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 800;
+    }
+
+    .play {
+      display: flex;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .play .throw {
+      width: 30%;
+    }
+    .throw img {
+      width: 100%;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>
-    rock-paper-scissors
-  </h1>
-  <p>
-    Here, you can play a five-round game of rock-paper-scissors with the computer.
-  </p>
+  <main>
+    <h1>
+      rock-paper-scissors
+    </h1>
+    <p>Here, you can play a five-round game of rock-paper-scissors with the computer.</p>
+    <p>click your play below</p>
+    <div class="play">
+      <div class="throw rock">
+        <img src="./rock.png" alt="rock">
+      </div>
+      <div class="throw paper">
+        <img src="./paper.png" alt="paper">
+      </div>
+      <div class="throw scissors">
+        <img src="./scissors.png" alt="scissors">
+      </div>
+    </div>
+  </main>
+
 
   <div class="score">
     <h3 class="round01"></h2>
@@ -58,7 +109,12 @@
     return computerSelection
   }
 
-  //this function gets the player's throw
+  //this gets the player's throw
+  const throws = document.querySelectorAll("div.throw")
+  throws.addEventListener("click", function() {
+    
+  })
+
   function playerPlay() {
     let playerSelection
     
@@ -76,7 +132,7 @@
   }
 
   // this function plays one round
-  function playRound(computerSelection, playerSelection) {
+  // function playRound(computerSelection, playerSelection) {
 
   // this will be useful when we move the game from console to webpage
     //$('div.game h2.round').text('this is round '+roundNumber)
