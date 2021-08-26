@@ -5,15 +5,71 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rock-paper-scissors game</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  </style>
+    
+
+  <style>
+    body {
+      font-family: 'Inter';
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    main {
+      margin: 2rem;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 800;
+    }
+
+    .play {
+      display: flex;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .play .throw {
+      width: 30%;
+    }
+    .throw img {
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    .throw img:hover {
+      transform: rotate(270deg);
+      transition: all 0.3s ease-in-out 0s; 
+    }
+  </style>
 </head>
 <body>
 
-  <h1>
-    rock-paper-scissors
-  </h1>
-  <p>
-    Here, you can play a five-round game of rock-paper-scissors with the computer.
-  </p>
+  <main>
+    <h1>
+      rock-paper-scissors
+    </h1>
+    <p>Here, you can play a five-round game of rock-paper-scissors with the computer.</p>
+    <p>click your play below</p>
+    <div class="play">
+      <div class="throw" id="rock">
+        <img src="./rock.png" alt="rock">
+      </div>
+      <div class="throw" id="paper">
+        <img src="./paper.png" alt="paper">
+      </div>
+      <div class="throw" id="scissors">
+        <img src="./scissors.png" alt="scissors">
+      </div>
+    </div>
+  </main>
+
 
   <div class="score">
     <h3 class="round01"></h2>
@@ -36,18 +92,19 @@
   
 </body>
 
-<script src="jquery.js"></script>
+<!-- <script src="jquery.js"></script> -->
 
 <script>
 
   // this sets up the variables that are needed globally
-  let roundNumber=1
+  // let roundNumber=1
   let computerScore=0
   let playerScore=0
+  let computerSelection
+  let playerSelection
 
   // this function gets the computer's throw
   function computerPlay() {
-    let computerSelection
     let random = Math.floor(Math.random() * 3) + 1;
     random == 1 ? computerSelection = "rock"
     : random == 2 ? computerSelection = "paper"
@@ -58,31 +115,35 @@
     return computerSelection
   }
 
-  //this function gets the player's throw
-  function playerPlay() {
+  //this gets the player's throw
+  const rockThrow = document.querySelector("#rock")
+  const paperThrow = document.querySelector("#paper")
+  const scissorsThrow = document.querySelector("#scissors")
+
+  rockThrow.addEventListener("click", function() {
+    playerSelection = "rock"
+    playRound()
+  })
+  paperThrow.addEventListener("click", function() {
+    playerSelection = "paper"
+    playRound()
+  })
+  scissorsThrow.addEventListener("click", function() {
+    playerSelection = "scissors"
+    playRound()
+  })
+
+/*  function playerPlay() {
     let playerSelection
     
     playerSelection = prompt("Please enter rock, paper, or scissors: ").toLowerCase();
     if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" && playerSelection=="") {
       playerSelection = prompt("Please enter exactly 'rock' or 'paper' or 'scissors': ").toLowerCase();
-    }
-    /*
-    playerSelection = "rock"
-    */
-    // this will be useful when we move the game from console to webpage
-      // $('div.game h3.player'/*+gameNumber*/).text('your throw is... ' + playerSelection)
-    console.log('your throw is... ' + playerSelection)
-    return playerSelection
-  }
+    }*/
 
   // this function plays one round
-  function playRound(computerSelection, playerSelection) {
+  function playRound(computerSelection) {
 
-  // this will be useful when we move the game from console to webpage
-    //$('div.game h2.round').text('this is round '+roundNumber)
-  console.log('this is round ' + roundNumber)
-
-    playerSelection = playerPlay()
     computerSelection = computerPlay()
 
     let results 
@@ -97,12 +158,8 @@
       results = "it's a draw! " + playerSelection + " is the same as " + computerSelection + "!"
     }
 
-    // this will be useful when we move the game from console to webpage
-      // $('div.game h2.results'/*+gameNumber*/).text(results)
+    // roundNumber+=1
     console.log(results)
-    console.log('the computer score is ' + computerScore + ', and your score is ' + playerScore)
-
-    roundNumber+=1
 
     return results
     
@@ -123,7 +180,7 @@
 
   }
   
-  game()
+  // game()
 
 </script>
 </html>
